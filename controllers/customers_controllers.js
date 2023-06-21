@@ -6,7 +6,7 @@ class CustomersController{
     async createCustomers(req,res){
         try {
                 const customers  = await customersService.createCustomer(req.body.name,req.body.adress,req.body.cnic)
-                res.status(201).json({"CUSTOMER ENTERED SUCESSFULLY":customers});
+                res.status(201).json({"message":`Customer Succefully posted With this Name ${req.body.name}`});
                 
             } catch (error) {
                 console.log(error)

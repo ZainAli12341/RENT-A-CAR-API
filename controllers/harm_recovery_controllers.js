@@ -6,7 +6,7 @@ class RecoveryController{
     async createRecoveries(req,res){
         try {
                 const recovery  = await recoveryService.createRecovery(req.body.parts_id,req.body.redListed_customers_id,req.body.disabled_car_id,req.body.status)
-                res.status(201).json({"RECOVERY ENTERED SUCESSFULLY":recovery});
+                res.status(201).json({"message":`New Record for recovery posted successfully`});
                 
             } catch (error) {
                 console.log(error)
@@ -25,7 +25,7 @@ class RecoveryController{
     async updateRecoveries(req,res){
         try {
             const updateRecovery = await recoveryDAO.updateRecoveries(req.body.id,req.body.status) 
-            res.status(200).json({"Your id has been updated successfully":updateRecovery})
+            res.status(200).json({"message":`Your id has been updated successfully  for this ${req.body.id}`})
         } catch (error) {
             console.log(error)
 

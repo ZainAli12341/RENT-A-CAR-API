@@ -5,7 +5,7 @@ class OrdersController{
     async createOrders(req,res){
         try {
                 const orders  = await ordersService.createOrders(req.body.list_customers_id,req.body.booked_car_id,req.body.days)
-                res.status(201).json({"ORDER PLACED SUCCESSFULLY":orders});
+                res.status(201).json({"message":`for this Customers Id : ${req.body.list_customers_id} and he has booked this Car Id : ${req.body.booked_car_id} for these days : ${req.body.days}`});
                 
             } catch (error) {
                 console.log(error)

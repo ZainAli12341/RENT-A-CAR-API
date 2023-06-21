@@ -5,7 +5,7 @@ class CarController{
     async createCars(req,res){
         try {
                 const cars  = await carService.createCars(req.body.name,req.body.manufactured_year,req.body.price_per_day,req.body.availability_status)
-                res.status(201).json({"CAR ADDED":cars});
+                res.status(201).json({"message":`${req.body.name} is added successfully`});
                 
             } catch (error) {
                 console.log(error)
