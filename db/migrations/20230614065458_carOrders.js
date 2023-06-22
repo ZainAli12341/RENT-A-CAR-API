@@ -7,8 +7,8 @@ const { table } = require("console");
 exports.up = function(knex) {
       return knex.schema.createTable('orders',table=>{
          table.increments('id').primary()
-         table.integer('list_customers_id').references('id').inTable('customers');
-         table.integer('booked_car_id').references('id').inTable('cars');
+         table.integer('list_customers_id').references('id').inTable('customers').onDelete('CASCADE');
+         table.integer('booked_car_id').references('id').inTable('cars').onDelete('CASCADE');
          table.integer('days');
    })
 };

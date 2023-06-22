@@ -5,9 +5,9 @@
 exports.up = function(knex) {
 return knex.schema.createTable('recovery',table =>{
         table.increments('id').primary()
-        table.integer('parts_id').references('id').inTable('parts');
-        table.integer('redListed_customers_id').references('id').inTable('customers');
-        table.integer('disabled_car_id').references('id').inTable('cars');
+        table.integer('parts_id').references('id').inTable('parts').onDelete('CASCADE');
+        table.integer('redListed_customers_id').references('id').inTable('customers').onDelete('CASCADE');
+        table.integer('disabled_car_id').references('id').inTable('cars').onDelete('CASCADE');
         table.string('status').notNullable()
   })
 };
