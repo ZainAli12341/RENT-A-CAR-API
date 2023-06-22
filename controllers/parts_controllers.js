@@ -22,7 +22,17 @@ class PartsController{
         } catch (error) {
             console.log(error)
         }
-    } 
-}
+    }
+    
+    async deleteParts(req,res){
+        try {
+            const deleteParts = await partsDAO.deleteParts(req.body.id) 
+            res.status(200).json({"message":`This id : ${req.body.id} has been deleted successfully`})
+        } catch (error) {
+            console.log(error)   
+        
 
+        }  
+}
+}
 module.exports = new PartsController()

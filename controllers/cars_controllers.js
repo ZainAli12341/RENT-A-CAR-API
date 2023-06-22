@@ -21,6 +21,17 @@ class CarController{
             console.log(error)
         }
     }
+    
+    async deleteCars(req,res){
+        try {
+            const deleteCars = await carDAO.deleteCars(req.body.id) 
+            res.status(200).json({"message":`This id : ${req.body.id} has been deleted successfully`})
+        } catch (error) {
+            console.log(error)   
+        
+
+        }  
+}
 }
 
 module.exports = new CarController()

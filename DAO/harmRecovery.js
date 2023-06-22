@@ -47,6 +47,10 @@ class RECOVERYDAO{
       }
   
   }
+  async deleteRecovery(id){
+    const deleteRecovery =  await  db('recovery').where({id:id}).del();
+    return deleteRecovery
+}
 
 }
 

@@ -25,7 +25,7 @@ class CustomersController{
     async DeleteCustomers(req,res){
         try {
             const delCustomer = await customersDAO.deleteCustomers(req.body.id) 
-            res.status(200).json({"Your id has been Deleted Successfully":delCustomer})
+            res.status(200).json({})
         } catch (error) {
             console.log(error)
 

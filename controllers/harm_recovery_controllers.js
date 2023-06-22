@@ -40,6 +40,18 @@ class RecoveryController{
          console.log(error)
         } 
     }
+    
+    async deleteRecovery(req,res){
+        try {
+            const deleteRecovery = await recoveryDAO.deleteRecovery(req.body.id) 
+            res.status(200).json({"message":`This id : ${req.body.id} has been deleted successfully`})
+        } catch (error) {
+            console.log(error)   
+        
 
+        }  
+
+    }
 }
+
 module.exports = new RecoveryController()

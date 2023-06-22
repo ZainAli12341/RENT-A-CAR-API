@@ -24,6 +24,12 @@ const db =require('../db/db')
     }
         
     }
+    
+async deleteCars(id){
+    const deleteCars =  await  db('cars').where({id:id}).del();
+    return deleteCars
+}
+
   
 }
 

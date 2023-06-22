@@ -20,6 +20,10 @@ try {
 }
 }
 
+async deleteParts(id){
+    const deleteParts =  await  db('parts').where({id:id}).del();
+    return deleteParts
+}
 
 
 }

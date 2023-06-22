@@ -35,5 +35,12 @@ async joins(){
     }
 
 }
+async deleteOrders(id){
+    const deleteOrders =  await  db('orders').where({id:id}).del();
+    return deleteOrders
+}
+
+
+
 }
 module.exports = new ORDERSDAO ();
