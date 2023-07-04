@@ -9,9 +9,10 @@ class CarController{
                 
             } catch (error) {
                 console.log(error)
+            
             }
-
-    } 
+        }
+    
     async getCars(req,res){
         try {
             const getAllCars = await carDAO.getCars() 
@@ -28,10 +29,10 @@ class CarController{
             res.status(200).json({"message":`This id : ${req.body.id} has been deleted successfully`})
         } catch (error) {
             console.log(error)   
-        
-
         }  
+    }
 }
-}
+
+
 
 module.exports = new CarController()
